@@ -1,0 +1,29 @@
+{
+  "name": "immgenerator",
+  "version": "1.0.0",
+  "main": "./src/main.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun ./src/main.ts",
+    "run-exe": "./ImmGenerator-x86_64.exe",
+    "build-windows": "bun build --compile --minify ./src/main.ts --outfile IMMGenerator",
+    "build-windows-x64": "bun build --compile --target=bun-windows-x64 ./src/main.ts --outfile IMMGenerator-x86_64",
+    "build-linux-x64": "bun build --compile --target=bun-linux-x64 ./src/main.ts --outfile PPMGenerator-x64",
+    "build-linux-arm64": "bun build --compile --target=bun-linux-arm64 ./src/main.ts --outfile IMMGenerator-arm64",
+    "build-darwin-x64": "bun build --compile --target=bun-darwin-arm64 ./src/main.ts --outfile IMMGenerator-x64",
+    "build-darwin-arm64": "bun build --compile --target=bun-darwin-arm64 ./src/main.ts --outfile IMMGenerator-arm64"
+  },
+  "outputPath": "dist",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@img/sharp-win32-x64": "^0.33.5",
+    "archiver": "^7.0.1",
+    "jimp": "^1.6.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.3"
+  }
+}
